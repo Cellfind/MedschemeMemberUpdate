@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedschemeMemberUpdate", "MedschemeMemberUpdate\MedschemeMemberUpdate.csproj", "{A36C2B33-503C-4ECB-81A5-A6AA79534485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedschemeMemberUpdateSMSService", "..\MedschemeMemberUpdateSMSService\MedschemeMemberUpdateSMSService.csproj", "{37D80457-45CD-4ECF-A096-6115BD4FCA53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A36C2B33-503C-4ECB-81A5-A6AA79534485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36C2B33-503C-4ECB-81A5-A6AA79534485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36C2B33-503C-4ECB-81A5-A6AA79534485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36C2B33-503C-4ECB-81A5-A6AA79534485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D80457-45CD-4ECF-A096-6115BD4FCA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D80457-45CD-4ECF-A096-6115BD4FCA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D80457-45CD-4ECF-A096-6115BD4FCA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D80457-45CD-4ECF-A096-6115BD4FCA53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7247575-5C8F-4495-8E01-83FD53EFF4C0}
+	EndGlobalSection
+EndGlobal
