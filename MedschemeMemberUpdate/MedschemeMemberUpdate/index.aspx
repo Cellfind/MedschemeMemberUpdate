@@ -12,7 +12,7 @@
             font-family: Arial, Helvetica, sans-serif;
             height: 100%;
             margin: 0;
-            display: flex;
+            display: block;
             justify-content: center;
         }
 
@@ -151,18 +151,14 @@
 <body>
     <form id="form1" runat="server">
 
-        <div style="width:90%; margin:0 auto 20px auto;">
-            <br />
+        <div style="width:80%; margin:0 auto 20px auto;">
 
-            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/Medscheme-Logo.jpg" CssClass="img" />
-            <br />
-
-            <h2 style="margin: 0 auto 20px auto;">Welcome!</h2>
-            <p style="margin: 0 auto 20px auto;">Please complete the below fileds to in order to access your member details.</p>
+            <h1 style="margin:15px auto 20px auto;text-align: center;" >Welcome!</h1>
+            <p style="margin: 0 auto 20px auto;text-align: center;">Please complete the below fileds to in order to access your member details.</p>
 
             <asp:Panel ID="pnlLogin" runat="server" CssClass="login-panel">
 
-                <asp:TextBox ID="txtidnumber" runat="server" BorderStyle="Solid" BorderColor="LightBlue" BorderWidth="1px" PlaceHolder="ID Number"></asp:TextBox>
+                <asp:TextBox ID="txtidnumber" runat="server" BorderStyle="Solid" BorderColor="LightBlue" BorderWidth="1px" TextMode="Password" PlaceHolder="PIN"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="Button1_Click" />

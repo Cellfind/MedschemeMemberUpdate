@@ -11,7 +11,7 @@
             font-family: Arial, Helvetica, sans-serif;
             height: 100%;
             margin: 0;
-            display: flex;
+            display: block;
             justify-content: center;
         }
 
@@ -49,8 +49,6 @@
                 background-color: #424242;
                 color: white;
                 cursor: pointer;
-                width:40%;
-                float:left;
             }
 
                 input[type=submit]:hover {
@@ -59,7 +57,7 @@
 
         .img {
             width: 60%;
-            margin: 0 auto 20px auto;
+            margin: 15px auto 20px auto;
             display: block;
         }
 
@@ -126,37 +124,55 @@
                         color: #000;
                         text-decoration: none;
                     }
+
+
+        .centered-container {
+            flex-direction: column; /* Stack elements vertically; use 'row' for horizontal alignment */
+            align-items: center; /* Center elements horizontally */
+            justify-content: center; /* Center elements vertically */
+            height: 100vh; /* Full height of the viewport */
+            text-align: center;
+            margin: 0px auto 0px 20px;
+        }
     </style>
 </head>
 <body>
     <div style="width: 90%; margin: 0 auto 20px auto;">
+        <asp:Image ID="Image1" runat="server" CssClass="img" />
+        <h3 style="text-align: center;">Welcome to our Dependants update form!</h3>
+        <p style="text-align: center;">Please complete as many of the below fields marked in red before saving.</p>
         <form id="form1" runat="server">
-            <div style="text-align: center; width: 90%; margin: 0 auto 20px auto;">
-                <asp:Image ID="Image1" runat="server" CssClass="img" />
-                <h3 style="">Welcome to our Dependants update form!</h3>
+            <div class="centered-container">
 
-                <asp:TextBox ID="MemberNumbertxt" runat="server" Style="border: solid 1px black" PlaceHolder="Member Number"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="Nametxt" runat="server" Style="border: solid 1px black" PlaceHolder="Name"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="Surnametxt" runat="server" Style="border: solid 1px black" PlaceHolder="Surname"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="NickNametxt" runat="server" Style="border: solid 1px black" PlaceHolder="NickName"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="IDNumbertxt" runat="server" Style="border: solid 1px black" PlaceHolder="ID Number"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="CellNumbertxt" runat="server" Style="border: solid 1px black" PlaceHolder="Cell Number"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="EmailAddresstxt" runat="server" Style="border: solid 1px black" PlaceHolder="Email Address"></asp:TextBox>
-                <br />
-                <asp:TextBox ID="TaxRefNumbertxt" runat="server" Style="border: solid 1px black" PlaceHolder="Tax Ref Number"></asp:TextBox>
-                <br />
+                <div style="text-align: center; width: 100%; margin: 0 auto 20px auto;">
 
-            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
-            <br />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
-                <asp:Button ID="Back" runat="server" Text="Back" OnClick="Back_Click" />
-           </div>
+
+                    <asp:TextBox ID="MemberNumbertxt" runat="server" PlaceHolder="Member Number"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="Nametxt" runat="server" PlaceHolder="Name"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="Surnametxt" runat="server" PlaceHolder="Surname"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="NickNametxt" runat="server" PlaceHolder="NickName"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="IDNumbertxt" runat="server" PlaceHolder="ID Number"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="CellNumbertxt" runat="server" PlaceHolder="Cell Number"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="EmailAddresstxt" runat="server" PlaceHolder="Email Address" TextMode="Email"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="TaxRefNumbertxt" runat="server" PlaceHolder="Tax Ref Number"></asp:TextBox>
+                    <br />
+
+                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+                    <div style="text-align: center;">
+                        <div>
+                            <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                            <asp:Button ID="Back" runat="server" Text="Back" OnClick="Back_Click" CssClass="button" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </body>

@@ -112,6 +112,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.MemberNumber))
                             {
                                 MemberNumbertxt.Enabled = false;
+                                MemberNumbertxt.BorderColor = System.Drawing.Color.Black;
+                                MemberNumbertxt.BorderWidth = 1;
+                                MemberNumbertxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else 
+                            {
+                                MemberNumbertxt.BorderColor = System.Drawing.Color.Red;
+                                MemberNumbertxt.BorderWidth = 1;
+                                MemberNumbertxt.BorderStyle = BorderStyle.Solid;
                             }
 
                         }
@@ -122,6 +131,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.Name))
                             {
                                 Nametxt.Enabled = false;
+                                Nametxt.BorderColor = System.Drawing.Color.Black;
+                                Nametxt.BorderWidth = 1;
+                                Nametxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                Nametxt.BorderColor = System.Drawing.Color.Red;
+                                Nametxt.BorderWidth = 1;
+                                Nametxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "Surname")
@@ -131,6 +149,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.Surname))
                             {
                                 Surnametxt.Enabled = false;
+                                Surnametxt.BorderColor = System.Drawing.Color.Black;
+                                Surnametxt.BorderWidth = 1;
+                                Surnametxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                Surnametxt.BorderColor = System.Drawing.Color.Red;
+                                Surnametxt.BorderWidth = 1;
+                                Surnametxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "NickName")
@@ -140,6 +167,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.NickName))
                             {
                                 NickNametxt.Enabled = false;
+                                NickNametxt.BorderColor = System.Drawing.Color.Black;
+                                NickNametxt.BorderWidth = 1;
+                                NickNametxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                NickNametxt.BorderColor = System.Drawing.Color.Red;
+                                NickNametxt.BorderWidth = 1;
+                                NickNametxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "IDNumber")
@@ -149,6 +185,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.IDNumber))
                             {
                                 IDNumbertxt.Enabled = false;
+                                IDNumbertxt.BorderColor = System.Drawing.Color.Black;
+                                IDNumbertxt.BorderWidth = 1;
+                                IDNumbertxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                IDNumbertxt.BorderColor = System.Drawing.Color.Red;
+                                IDNumbertxt.BorderWidth = 1;
+                                IDNumbertxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "CellNumber")
@@ -158,6 +203,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.CellNumber))
                             {
                                 CellNumbertxt.Enabled = false;
+                                CellNumbertxt.BorderColor = System.Drawing.Color.Black;
+                                CellNumbertxt.BorderWidth = 1;
+                                CellNumbertxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                CellNumbertxt.BorderColor = System.Drawing.Color.Red;
+                                CellNumbertxt.BorderWidth = 1;
+                                CellNumbertxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "EmailAddress")
@@ -167,6 +221,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.EmailAddress))
                             {
                                 EmailAddresstxt.Enabled = false;
+                                EmailAddresstxt.BorderColor = System.Drawing.Color.Black;
+                                EmailAddresstxt.BorderWidth = 1;
+                                EmailAddresstxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                EmailAddresstxt.BorderColor = System.Drawing.Color.Red;
+                                EmailAddresstxt.BorderWidth = 1;
+                                EmailAddresstxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                         else if (fieldName == "TaxRefNumber")
@@ -176,6 +239,15 @@ namespace MedschemeMemberUpdate
                             if (!string.IsNullOrEmpty(value.TaxRefNumber))
                             {
                                 TaxRefNumbertxt.Enabled = false;
+                                TaxRefNumbertxt.BorderColor = System.Drawing.Color.Black;
+                                TaxRefNumbertxt.BorderWidth = 1;
+                                TaxRefNumbertxt.BorderStyle = BorderStyle.Solid;
+                            }
+                            else
+                            {
+                                TaxRefNumbertxt.BorderColor = System.Drawing.Color.Red;
+                                TaxRefNumbertxt.BorderWidth = 1;
+                                TaxRefNumbertxt.BorderStyle = BorderStyle.Solid;
                             }
                         }
                     }
@@ -197,13 +269,36 @@ namespace MedschemeMemberUpdate
             string CellNumber = CellNumbertxt.Text;
             string EmailAddress = EmailAddresstxt.Text;
             string TaxRefNumber = TaxRefNumbertxt.Text;
+            string Updated = "Y";
+            string UpdateDate = "NOW()";
+
+            if (string.IsNullOrEmpty(NickName))
+            {
+                NickName = null;
+                Updated = "N";
+                UpdateDate = "0000-00-00 00:00:00";
+            }
+            
+            if (string.IsNullOrEmpty(EmailAddress))
+            {
+                EmailAddress = null;
+                Updated = "N";
+                UpdateDate = "0000-00-00 00:00:00";
+            }
+            
+            if (string.IsNullOrEmpty(TaxRefNumber))
+            {
+                TaxRefNumber = null;
+                Updated = "N";
+                UpdateDate = "0000-00-00 00:00:00";
+            }
 
             try
             {
-                db.Execute("UPDATE MedschemeMemberProfiles.MemberProfile SET Name = @Name, Surname = @Surname, NickName = @NickName, IDNumber = @IDNumber, CellNumber =@CellNumber, EmailAddress = @EmailAddress, TaxRefNumber = @TaxRefNumber, Updated = 'Y', UpdateDate = NOW() WHERE IDNumber = @IDNumber AND MemberNumber = @MemberNumber",
-                    new { Name = Name, Surname = Surname, NickName = NickName, CellNumber = CellNumber, EmailAddress = EmailAddress, TaxRefNumber = TaxRefNumber, IDNumber = IDNumbertxt.Text, MemberNumber = MemberNumbertxt.Text });
+                db.Execute("UPDATE MedschemeMemberProfiles.MemberProfile SET Name = @Name, Surname = @Surname, NickName = @NickName, IDNumber = @IDNumber, CellNumber =@CellNumber, EmailAddress = @EmailAddress, TaxRefNumber = @TaxRefNumber, Updated = @Updated, UpdateDate = @UpdateDate WHERE IDNumber = @IDNumber AND MemberNumber = @MemberNumber",
+                    new { Name = Name, Surname = Surname, NickName = NickName, CellNumber = CellNumber, EmailAddress = EmailAddress, TaxRefNumber = TaxRefNumber, Updated = Updated, UpdateDate = UpdateDate, IDNumber = IDNumbertxt.Text, MemberNumber = MemberNumbertxt.Text });
 
-                lblMessage.Text = "Member Updated Succesfully.";
+                lblMessage.Text = "Member Saved Succesfully.";
                 lblMessage.ForeColor = System.Drawing.Color.Green;
             }
             catch (Exception ex)

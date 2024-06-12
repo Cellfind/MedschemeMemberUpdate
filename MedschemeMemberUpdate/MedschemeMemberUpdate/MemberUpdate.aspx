@@ -23,16 +23,16 @@
      /* style inputs and link buttons */
      input,
      .btn {
-            width: 15%;
             padding: 9px;
             border: none;
             border-radius: 4px;
-            margin: 5px 10px;
+            /*margin: 5px 10px;*/
             opacity: 0.85;
             display: inline-block;
-            font-size: 15px;
-            float:right;
+            font-size: 17px;
             line-height: 18px;
+            width:100%;
+            float:left;
             text-decoration: none; /* remove underline from anchors */
      }
 
@@ -47,11 +47,11 @@
         background-color: #666;
     }
 
-    .img {
+        .img {
+            width: 60%;
+            margin: 15px auto 20px auto;
             display: block;
-            margin: 0 auto 20px auto;
-            width: 20%;
-          }
+        }
 
      .dynamic-image {
             display: block;
@@ -109,9 +109,10 @@
 <body>
     <div style="width:90%; margin:0 auto 20px auto;">
     <form id="form1" runat="server">
-        <div style="text-align: center;width:90%; margin:0 auto 20px auto;">
+        <div style="text-align: center;width:90%; margin:0 auto 15px auto;">
                 <asp:Image ID="Image1" runat="server" CssClass="img"/>
-                <h3 style="">Welcome to our Dependants update form!</h3>
+                <h3 style="margin:15px auto 20px auto;text-align: center;">Welcome to our Dependants update form!</h3>
+                <p style="margin: 0 auto 20px auto;text-align: center;">Please select a member in the list below for editing.</p>
             </div>
             <asp:GridView ID="GridView1" CssClass="myGridClass  myPagerClass" AlternatingRowStyle-CssClass="myAltRowClass" runat="server" AutoGenerateColumns="False" 
                           DataKeyNames="MemberNumber,IDNumber" 
@@ -129,17 +130,22 @@
                     <asp:BoundField DataField="CellNumber" HeaderText="CellNumber" Visible="false" />
                     <asp:BoundField DataField="EmailAddress" HeaderText="EmailAddress" Visible="false" />
                     <asp:BoundField DataField="TaxRefNumber" HeaderText="TaxRefNumber" Visible="false" />
-                    <asp:BoundField DataField="Updated" HeaderText="Updated" Visible="True" />
+                    <asp:BoundField DataField="Updated" HeaderText="Completed" Visible="True"/>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" Width="80%" />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" Width="100%" />
                         </ItemTemplate>
                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
       <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
         <br />
-      <asp:Button ID="btnlogoutn" runat="server" Text="Log Out" OnClick="btnLogin_Click" />
+         <div style="text-align: center;margin-bottom:100px;">
+                <div>
+                    <asp:Button ID="btnlogoutn" runat="server" Text="Log Out" OnClick="btnLogin_Click" />
+                </div>
+         </div>
+
     </form>
   </div>
 </body>
