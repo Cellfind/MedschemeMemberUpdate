@@ -154,7 +154,7 @@
         <div style="width:80%; margin:0 auto 20px auto;">
 
             <h1 style="margin:15px auto 20px auto;text-align: center;" >Welcome!</h1>
-            <p style="margin: 0 auto 20px auto;text-align: center;">Please complete the below fileds to in order to access your member details.</p>
+            <p style="margin: 0 auto 20px auto;text-align: center;">Please complete the below fileds in order to access your member details.</p>
 
             <asp:Panel ID="pnlLogin" runat="server" CssClass="login-panel">
 
